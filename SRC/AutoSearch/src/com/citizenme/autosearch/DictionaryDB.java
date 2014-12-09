@@ -63,7 +63,10 @@ public class DictionaryDB {
         String selection = FIELD_NAME + " like ? ";
 
         if (selectionArgs != null) {
-            selectionArgs[0] = "%" + selectionArgs[0] + "%";
+//            selectionArgs[0] = "%" + selectionArgs[0] + "%";
+//            Search by First word only rather than in between
+            selectionArgs[0] =  selectionArgs[0] + "%";
+
         }
 
         SQLiteQueryBuilder queryBuilder = new SQLiteQueryBuilder();
